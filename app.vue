@@ -1,9 +1,9 @@
 <script setup>
-const state = reactive({
+const state = ref({
   count: 0,
 });
 
-const incrementCount = () => state.count++;
+const incrementCount = () => state.value.count++;
 </script>
 <template>
   <div>
