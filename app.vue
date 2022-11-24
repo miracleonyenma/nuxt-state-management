@@ -1,12 +1,25 @@
+<!-- ./app.vue -->
 <script setup>
-const state = reactive({
-  count: 0,
-});
+import { useMoviesStore } from "./stores/movies";
 
-const incrementCount = () => state.count++;
+const moviesStore = useMoviesStore();
 </script>
 <template>
-  <div>
-    <button @click="incrementCount">Clicked {{ state.count }} times</button>
+  <div class="wrapper">
+    <div class="movies-list">
+      <h2>Movies</h2>
+      <MoviesList />
+    </div>
+    <div class="wish-list">
+      <h2>Wish List</h2>
+      <WishList />
+      Total price: {{ moviesStore.totalPrice }}
+    </div>
   </div>
 </template>
+<style>
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+</style>
