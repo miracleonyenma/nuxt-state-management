@@ -1,7 +1,9 @@
 <!-- ./components/WishList.vue -->
 
 <script setup>
-const wishlist = useWishlist();
+const { wishlist } = useMovies();
+
+console.log({ wishlist });
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <!-- ./app.vue -->
 <script setup>
-const totalPrice = useTotalPrice();
+const {totalPrice} = useMovies();
 </script>
 <template>
   <div class="wrapper">
