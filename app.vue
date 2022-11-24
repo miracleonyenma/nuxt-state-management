@@ -1,12 +1,23 @@
+<!-- ./app.vue -->
 <script setup>
-const state = ref({
-  count: 0,
-});
-
-const incrementCount = () => state.value.count++;
+const totalPrice = useTotalPrice();
 </script>
 <template>
-  <div>
-    <button @click="incrementCount">Clicked {{ state.count }} times</button>
+  <div class="wrapper">
+    <div class="movies-list">
+      <h2>Movies</h2>
+      <MoviesList />
+    </div>
+    <div class="wish-list">
+      <h2>Wish List</h2>
+      <WishList />
+      Total price: {{ totalPrice }}
+    </div>
   </div>
 </template>
+<style>
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+</style>
