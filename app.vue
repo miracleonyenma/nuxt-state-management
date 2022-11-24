@@ -1,6 +1,8 @@
 <!-- ./app.vue -->
 <script setup>
-const {totalPrice} = useMovies();
+import { useMoviesStore } from "./stores/movies";
+
+const moviesStore = useMoviesStore();
 </script>
 <template>
   <div class="wrapper">
@@ -11,7 +13,7 @@ const {totalPrice} = useMovies();
     <div class="wish-list">
       <h2>Wish List</h2>
       <WishList />
-      Total price: {{ totalPrice }}
+      Total price: {{ moviesStore.totalPrice }}
     </div>
   </div>
 </template>

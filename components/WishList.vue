@@ -1,9 +1,9 @@
 <!-- ./components/WishList.vue -->
 
 <script setup>
-const { wishlist } = useMovies();
+import { useMoviesStore } from "~~/stores/movies";
 
-console.log({ wishlist });
+const { wishlist } = useMoviesStore();
 </script>
 
 <template>
